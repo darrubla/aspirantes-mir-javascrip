@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Palindromo</title>
+  </head>
+  <body>
+    <label for="texto">Escribe algo:</label>
+    <input onkeypress="handleClear()" type="text" id="texto" />
+    <button onclick="handleclick()" class="btn">Validar</button>
+    <p id="resultado"></p>
+    <script>
+      const input = document.querySelector('#texto') // document.getElementById('texto') // document.getElementsByTagName('input')[0]
+      const resultado = document.querySelector('#resultado') // document.getElementById('resultado) // document.getElementsByTagName('p')[0]
+
+      function handleClear() {
+        if (resultado.textContent !== '') resultado.textContent = ''
+      }
+
+      function handleclick() {
+        const firstHalf = input.value.substring(
+          0,
+          Math.floor(input.value.length / 2)
+        )
+        const secondHalf = input.value.substring(
+          Math.ceil(input.value.length / 2),
+          input.value.length
+        )
+        const reversedSecondhalf = secondHalf.split('').reverse().join('')
+        if (firstHalf === reversedSecondhalf) {
+          resultado.textContent = 'Es palindroma'
+        } else {
+          resultado.textContent = 'No es palindroma'
+        }
+      }
+    </script>
+  </body>
+</html>
