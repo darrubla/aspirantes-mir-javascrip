@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>To Do list</title>
+  </head>
+  <body>
+    <form action="javascript:handleSubmit(this)">
+      <input type="text" placeholder="Ingresa tu nueva tarea" />
+      <button type="submit">Add</button>
+    </form>
+    <div class="task__container">
+      <select onchange="handleFilter()">
+        <option value=" " disabled selected hidden>Filter</option>
+        <option value="undone">Undone</option>
+        <option value="done">Done</option>
+        <option value="*">All</option>
+      </select>
+      <ol id="task-list"></ol>
+      <button onclick="handleDelete()" type="button">Delete all done</button>
+    </div>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
