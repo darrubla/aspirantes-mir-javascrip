@@ -1,0 +1,93 @@
+html * {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background-color: lightgrey;
+}
+
+form {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  place-items: center;
+  width: 300px;
+  height: 280px;
+  padding: 10px 18px;
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+form div {
+  display: grid;
+  width: 100%;
+}
+
+form div:last-child {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+form input {
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+  filter: brightness(180%);
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 12px;
+  margin: 8px 0;
+}
+
+form input::placeholder {
+  color: black;
+}
+
+form input:focus {
+  border: none;
+  outline: none;
+}
+
+form button {
+  height: 40px;
+  font-size: 16px;
+  background-color: #e95678;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:disabled {
+  filter: brightness(80%);
+  cursor: not-allowed;
+}
+
+section {
+  width: 300px;
+  height: 160px;
+  display: none;
+  padding: 10px 18px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+section.show {
+  display: grid;
+}
+
+section label {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+section span {
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+}
